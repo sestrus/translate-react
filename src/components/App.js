@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Convert from "./Convert";
 import Translate from "./Translate";
 
 const options = [
@@ -35,7 +36,9 @@ const App = () => {
       />
       <hr />
       <h3 className="ui header">Output</h3>
-      <div>Translated output</div>
+      <div>
+        <Convert text={text} language={language} />
+      </div>
     </div>
   );
 };
