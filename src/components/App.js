@@ -4,16 +4,36 @@ import Translate from "./Translate";
 
 const options = [
   {
-    label: "Polish",
-    value: "pl",
+    label: "Arabic",
+    value: "ar",
+  },
+  {
+    label: "Czech",
+    value: "cs",
+  },
+  {
+    label: "French",
+    value: "fr",
   },
   {
     label: "German",
     value: "de",
   },
   {
-    label: "Arabic",
-    value: "ar",
+    label: "Italian",
+    value: "it",
+  },
+  {
+    label: "Polish",
+    value: "pl",
+  },
+  {
+    label: "Spanish",
+    value: "es",
+  },
+  {
+    label: "Swedish",
+    value: "sv",
   },
 ];
 

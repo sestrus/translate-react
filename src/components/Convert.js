@@ -4,6 +4,18 @@ import React, { useEffect, useState } from "react";
 const Convert = ({ text, language }) => {
   const [translated, setTranslated] = useState("");
 
+  const [debouncedText, setDebouncedText] = useState("");
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setDebouncedText(text);
+    }, 500);
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [text]);
+
   useEffect(() => {
     const doTranslation = async () => {
       const { data } = await axios.post(
@@ -11,7 +23,7 @@ const Convert = ({ text, language }) => {
         {},
         {
           params: {
-            q: text,
+            q: debouncedText,
             target: language.value,
             key: "AIzaSyCHUCmpR7cT_yDFHC98CZJy2LTms-IwDlM",
           },
@@ -20,7 +32,7 @@ const Convert = ({ text, language }) => {
       setTranslated(data.data.translations[0].translatedText);
     };
     doTranslation();
-  }, [language, text]);
+  }, [language, debouncedText]);
 
   return <div>{translated}</div>;
 };
