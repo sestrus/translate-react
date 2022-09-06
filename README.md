@@ -2,6 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+# WARNING
+
+### This project works only with connection on your local network at port 3000.
+
 ## Available Scripts
 
 In the project directory, you can run:
